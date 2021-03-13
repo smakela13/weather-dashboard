@@ -11,3 +11,7 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+  .font-new {
+    font-family: 'Comfortaa', cursive;
+  }

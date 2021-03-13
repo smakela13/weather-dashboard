@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/css/materialize.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
@@ -12,34 +14,36 @@
 <body>
     <!-- Title on Navbar -->
     <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Weather Dashboard</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-            </ul>
+        <div class="nav-wrapper cyan darken-2">
+            <div class="font-new brand-logo center">Weather Dashboard</div>
         </div>
     </nav>
 
     <main>
-    <div class="row">
-        <form class="col s12">
-            <h5>Search for a City:</h5>
+        <div class="container">
             <div class="row">
-                <div class="input-field col s2">
-                    <input id="city">
-                    <label for="city">City, State or ZIP Code</label>
-                </div>
-                <div class="input-field col s3">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Go!
-                    </button>
-                </div>
+                <form id="search-form" class="col s5">
+                    <h5>Search for a City:</h5>
+                    <div class="row">
+                        <div class="input-field col s5">
+                            <input id="city">
+                            <label for="city">City, State or ZIP Code</label>
+                        </div>
+                        <div class="input-field col">
+                            <button class="btn waves-effect waves-light cyan darken-2" type="submit" name="action"><i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div id="weather-results" class="col s7">Test</div>
             </div>
-        </form>
-    </div>
-    <div id="previously-searched"></div>
-    <div id="weather-results"></div>
+            <div class="row">
+                <div id="previously-searched" class="col s5">Test1</div>
+            </div>
+        </div>
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer font-new cyan darken-2">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -54,6 +58,9 @@
             </div>
         </div>
     </footer>
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
