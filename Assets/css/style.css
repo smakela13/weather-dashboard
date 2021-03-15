@@ -1,7 +1,4 @@
-.file-field .btn {
-    float: right;
-}
-
+/* Custom page styles for sticky footer */
 body {
     display: flex;
     min-height: 100vh;
@@ -12,6 +9,7 @@ body {
     flex: 1 0 auto;
   }
 
+  /* Font style */
   .font-new {
     font-family: 'Comfortaa', cursive;
   }
