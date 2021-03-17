@@ -79,7 +79,7 @@ function populateQuickSearch() {
 // attaches icon to the page
 function attachWeatherImage(ref, imageID) {
     var img = new Image();
-    var sourceBase = "http://openweathermap.org/img/wn/";
+    var sourceBase = "https://openweathermap.org/img/wn/";
     var sourceEnd = "@2x.png";
     var imageURL = sourceBase + imageID + sourceEnd;
     img.src = imageURL;
