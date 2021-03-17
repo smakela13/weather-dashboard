@@ -23,9 +23,9 @@ This weather dashboard is written in jQuery, JavaScript, HTML, MaterializeCSS, a
 
 ## Usage
 
-![Sarah Makela's Work Day Scheduler](./assets/images/smakela-weather-dashboard.png)
+![Sarah Makela's Weather Dashboard](./assets/images/smakela-weather-dashboard.png)
 
-Navigate to [Sarah Makela's Work Day Scheduler](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
+Navigate to [Sarah Makela's Weather Dashboard](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
 
 ## Credits
 
