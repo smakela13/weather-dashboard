@@ -17,7 +17,7 @@ This website allows you to view current weather conditions for the ZIP code of y
 
 In addition to that, you will also be shown a 5-day forecast for the city allowing you to view the temperature, humidity, and an icon representing the weather conditions for that day. The ZIP code will be stored on a sidebar allowing you to easily return to the weather forecast for the location of your choice.
 
-Be sure to keep some sunscreen on hand, just in case!
+Be sure to keep an umbrella and some sunscreen on hand! You never know what the forecast might be.
 
 This weather dashboard is written in jQuery, JavaScript, HTML, MaterializeCSS, and custom CSS. It uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities.
 
