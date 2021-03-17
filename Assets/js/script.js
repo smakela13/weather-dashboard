@@ -143,8 +143,8 @@ function fillDayWeather(weatherDataForDay, rowRef, forecastRequested) {
     var timeStamp = new Date(data.dt_txt);
     var timeSet = timeStamp.toDateString();
 
-    var temp = "Temperature " + data.main.temp;
-    var humidity = "Humidity " + data.main.humidity;
+    var temp = "Temp: " + data.main.temp + " °F";
+    var humidity = "Humidity " + data.main.humidity + "%";
     var output = timeSet + "<br /><br />" + temp + "<br />" + humidity;
 
     cardSpan.html(output);
