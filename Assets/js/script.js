@@ -150,7 +150,7 @@ function fillDayWeather(weatherDataForDay, rowRef, forecastRequested) {
 
     var temp = "Temp: " + data.main.temp + " °F";
     var humidity = "Humidity " + data.main.humidity + "%";
-    var output = timeSet + "<br /><br />" + temp + "<br />" + humidity;
+    var output = timeSet + "<br /><br />" + temp + "<br /><br />" + humidity + "<br />";
 
     cardSpan.html(output);
     data.weather.forEach(element => {
