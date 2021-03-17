@@ -1,6 +1,5 @@
 // query selectors and global variables
 var searchButton = document.querySelector('#search-button');
-var previousZIPs = document.querySelector("#previously-searched");
 var searchZip = document.querySelector('#zipcode');
 var weatherCards = $('#weather-cards');
 var forecastDays = 5;
@@ -8,9 +7,6 @@ var forecastOffset = 4; // daily forecast that displays to user (3PM)
 
 // API key data
 const apiKey = '5beadefa1274fa7b1d6019608525655d';
-
-// container for the weather forecasts
-var weatherFormEl = $('weather-form');
 
 // uses AJAX to fetch all necessary data from the ZIP code 
 function getWeatherForecastZipCode(chosenZip = undefined) {
@@ -21,7 +17,7 @@ function getWeatherForecastZipCode(chosenZip = undefined) {
     $.ajax({
         url: 'http://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
         type: "GET",
-    }).then(function (forecastWeather) {           
+    }).then(function (forecastWeather) {
         var lat = forecastWeather.city.coord.lat;
         var lon = forecastWeather.city.coord.lon;
     
@@ -32,9 +28,9 @@ function getWeatherForecastZipCode(chosenZip = undefined) {
             displayForecast(forecastWeather, fetchedCurrentWeather);
             saveZipToQuickList(searchZipText);
             populateQuickSearch();
-        })
-    })
-};
+        });
+    });
+}
 
 // retrieves stored ZIP code entries from local storage
 function getStoredZipEntries() {
@@ -69,7 +65,7 @@ function quickSearchPressed(event) {
 // builds sidebar for user's past searches
 function populateQuickSearch() {
     var stored = getStoredZipEntries();
-    var quickSearchSection = $('#previously-searched')
+    var quickSearchSection = $('#previously-searched');
     quickSearchSection.empty();
     stored.forEach(store_item => {
         var newQuickSearch = $('<li>');
