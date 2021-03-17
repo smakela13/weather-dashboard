@@ -1,90 +1,36 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Weather Dashboard
 
-## Your Task
+## Table of Contents
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+* [Description](#description)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that provides basic setup and usage instructions. You will use `localStorage` to store any persistent data.
+## Description
 
-## User Story
+Do you need to get accurate weather information easily? Do you want your previously searched locations to be one click away? 
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+With this weather application, you can get it all! 
 
-## Acceptance Criteria
+This website allows you to view current weather conditions for the ZIP code of your choice. This information includes: an icon representing the weather conditions, the temperature, the humidity, the wind speed, and the UV index. The UV index will tell you at-a-glance if conditions are favorable, moderate, or severe.
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+In addition to that, you will also be shown a 5-day forecast for the city allowing you to view the temperature, humidity, and an icon representing the weather conditions for that day. The ZIP code will be stored on a sidebar allowing you to easily return to the weather forecast for the location of your choice.
 
-## Mock-Up
+Be sure to keep some sunscreen on hand, just in case!
 
-The following image shows the web application's appearance and functionality:
+This weather dashboard is written in jQuery, JavaScript, HTML, MaterializeCSS, and custom CSS. It uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities.
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+## Usage
 
-## Grading Requirements
+![Sarah Makela's Work Day Scheduler](./assets/images/smakela-weather-dashboard.png)
 
-This homework is graded based on the following criteria: 
+Navigate to [Sarah Makela's Work Day Scheduler](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
 
-### Technical Acceptance Criteria: 40%
+## Credits
 
-* Satisfies all of the above acceptance criteria plus the following:
+Created by [Sarah Makela](https://github.com/smakela13).
 
-    * Uses the OpenWeather API to retrieve weather data.
+## License
 
-    * Uses `localStorage` to store persistent data.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+This website currently has No License, which means it is under exclusive copyright. No one can copy, distribute, or modify this website without permission.
