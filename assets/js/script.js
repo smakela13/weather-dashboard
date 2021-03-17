@@ -15,7 +15,7 @@ function getWeatherForecastZipCode(chosenZip = undefined) {
         searchZipText = chosenZip;
     }
     $.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
+        url: 'https://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
         type: "GET",
     }).then(function (forecastWeather) {
         var lat = forecastWeather.city.coord.lat;
