@@ -4,7 +4,7 @@ var previousZIPs = document.querySelector("#previously-searched");
 var searchZip = document.querySelector('#zipcode');
 var weatherCards = $('#weather-cards');
 var forecastDays = 5;
-var forecastOffset = 4; // which daily forecast we want to use
+var forecastOffset = 4; // daily forecast that displays to user (3PM)
 
 // API key data
 const apiKey = '5beadefa1274fa7b1d6019608525655d';
@@ -95,21 +95,24 @@ function setCityWeather(cityData, currentWeather) {
     var cityNameEl = document.querySelector('#city-name');
     var cityDateEl = document.querySelector('#city-date');
     var currentDate = new Date().toLocaleDateString("en-US");
-
-    cityNameEl.textContent = cityData.name;
-    cityDateEl.textContent = currentDate;
-
     var currentTempEl = document.querySelector('#temperature');
     var currentHumidityEl = document.querySelector('#humidity');
     var currentWindSpeedEl = document.querySelector('#wind-speed');
     var currentUVIndexEl = document.querySelector('#uv-index');
     var currentUVIndexColorEl = document.querySelector('#uv-color');
+    
+    currentUVIndexColorEl.classList.forEach(colorClass => {
+        currentUVIndexColorEl.classList.remove(colorClass);
+    });
+
+    cityNameEl.textContent = cityData.name + " ";
+    cityDateEl.textContent = currentDate;
 
     var weatherContainer = $('#weather-container');
     weatherContainer.css({
         border: "solid black 1px",
-        padding: "5px",
-        margin: "10px"
+        padding: "0 0 15px 15px",
+        margin: "20px 0 10px",
     });
 
     currentTempEl.textContent = "Temperature: " + currentWeather.current.temp + " °F";
@@ -117,13 +120,15 @@ function setCityWeather(cityData, currentWeather) {
     currentWindSpeedEl.textContent = "Wind Speed: " + currentWeather.current.wind_speed + " MPH";
     currentUVIndexEl.textContent = "UV Index: ";
     currentUVIndexColorEl.textContent = currentWeather.current.uvi;
+    var uviColor = 'green';
     if (currentWeather.current.uvi <= 2) {
-        currentUVIndexColorEl.classList.add('green');
-    } else if (currentWeather.current.uvi > 2 && currentUVIndexEl.current.uvi <=5) {
-        currentUVIndexColorEl.classList.add('orange');
+        uviColor = 'green';
+    } else if (currentWeather.current.uvi > 2 && currentWeather.current.uvi <= 5) {
+        uviColor = 'orange';
     } else {
-        currentUVIndexColorEl.classList.add('red');
+        uviColor = 'red';
     }
+    currentUVIndexColorEl.classList.add(uviColor, 'btn');
 
     currentWeather.current.weather.forEach(element => {
         attachWeatherImage(cityNameEl, element.icon);
@@ -138,7 +143,7 @@ function fillDayWeather(weatherDataForDay, rowRef, forecastRequested) {
     var cardSpan = $('<span>');
 
     cardDiv.addClass("col s5 m6 l2");
-    cardInnerDiv.addClass("card-panel cyan darken-2");
+    cardInnerDiv.addClass("card-panel center cyan darken-2");
     cardSpan.addClass('white-text');
     var timeStamp = new Date(data.dt_txt);
     var timeSet = timeStamp.toDateString();

@@ -1,15 +1,49 @@
 /* Custom page styles for sticky footer */
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
-  /* Font style */
-  .font-new {
-    font-family: 'Comfortaa', cursive;
-  }
+/* Custom style for nav bar */
+nav {
+  height: 90px;
+  line-height: 73px;
+}
+
+/* Font style */
+.font-new {
+  font-family: 'Comfortaa', cursive;
+}
+
+nav .brand-logo {
+  padding: 10px;
+  font-size: 2.75rem;
+}
+
+/* Adjustment to size of current weather icon and city name */
+#city-name img {
+  height: 45px;
+  width: 45px;
+}
+
+#city-name {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Media queries */
+@media only screen and (max-width: 861px){
+  nav, nav .nav-wrapper {
+  height: 80px;
+  line-height: 35px;
+}
+  nav .brand-logo {
+  padding: 10px;
+  font-size: 2.1rem;
+}
+}
