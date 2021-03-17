@@ -21,24 +21,36 @@
     <!-- ZIP Code Search -->
     <main>
         <div class="row">
-            <form id="weather-form" class="col s5">
-                <h5>Search for a City:</h5>
+            <div class="col s12 m5 l3">
                 <div class="row">
-                    <div class="input-field col s5">
-                        <input id="zipcode" name="zipcode" type="text" pattern="[0-9]*" placeholder="Enter your ZIP Code">
-                    </div>
-                    <div class="input-field col">
-                        <button class="btn waves-effect waves-light cyan darken-2" id="search-button"><i class="material-icons">search</i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                    <form id="weather-form" class="col s12">
+                    <h5>Search for a City:</h5>
+                        <div class="row">
+                            <div class="input-field col s9 l10">
+                            <input id="zipcode" name="zipcode" placeholder="Enter your ZIP Code">
+                        </div>
+                        <div class="input-field col s3 l2">
+                            <button class="btn waves-effect waves-light cyan darken-2" id="search-button"><i class="material-icons">search</i>
+                            </button>
+                        </div>
+                        </div>
+                    </form>
+                <!-- Previously Searched ZIP Codes -->
+                <ul id="previously-searched" class="collection"></ul>
+            </div>
+            </div>
             <!-- Weather Results -->
-            <div id="weather-results" class="col s7">Test</div>
-        </div>
-        <!-- Previously Searched ZIP Codes -->
-        <div class="row">
-            <div id="previously-searched" class="col s5">Test1</div>
+            <div id="weather-results" class="col s12 m7 l9">
+                <div id="weather-container">
+                    <h4 id="city-name"></h4><span id="city-date"></span>
+                    <p id="temperature"></p>
+                    <p id="humidity"></p>
+                    <p id="wind-speed"></p>
+                    <span id="uv-index"></span><span id="uv-color"></span>
+                </div>
+                <h5 style="margin: 15px;" id="forecast-header"></h5>
+                <div class="col s12" id="weather-cards"></div>
+            </div>   
         </div>
     </main>
     <!-- Footer -->
