@@ -8,28 +8,45 @@ var forecastOffset = 4; // daily forecast that displays to user (3PM)
 // API key data
 const apiKey = '5beadefa1274fa7b1d6019608525655d';
 
+function validateZipCode(validateZip) {
+    var zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
+    return zipCodePattern.test(validateZip);
+}
+
 // uses AJAX to fetch all necessary data from the ZIP code 
 function getWeatherForecastZipCode(chosenZip = undefined) {
     var searchZipText = searchZip.value;
     if (chosenZip) {
         searchZipText = chosenZip;
     }
-    $.ajax({
-        url: 'https://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
-        type: "GET",
-    }).then(function (forecastWeather) {
-        var lat = forecastWeather.city.coord.lat;
-        var lon = forecastWeather.city.coord.lon;
-    
+    if (!validateZipCode(searchZipText)) {
+        alert("Please provide a valid ZIP code!");
+    } else {
+        
         $.ajax({
-            url: 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&exclude=hourly,daily&appid=' + apiKey,
+            url: 'https://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
             type: "GET",
-        }).then(fetchedCurrentWeather => {
-            displayForecast(forecastWeather, fetchedCurrentWeather);
-            saveZipToQuickList(searchZipText);
-            populateQuickSearch();
+            success: function (forecastWeather) {
+                console.log(forecastWeather);
+                var lat = forecastWeather.city.coord.lat;
+                var lon = forecastWeather.city.coord.lon;
+
+                $.ajax({
+                    url: 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&exclude=hourly,daily&appid=' + apiKey,
+                    type: "GET",
+                }).then(fetchedCurrentWeather => {
+                    displayForecast(forecastWeather, fetchedCurrentWeather);
+                    saveZipToQuickList(searchZipText);
+                    populateQuickSearch();
+                });
+            },
+            error: function (xhr, ajaxOptions, throwError) {
+                if (xhr.status == 404) {
+                    alert("No city found for this ZIP code!");
+                }
+            }           
         });
-    });
+    }
 }
 
 // retrieves stored ZIP code entries from local storage
