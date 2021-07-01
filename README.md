@@ -23,7 +23,7 @@ This weather dashboard is written in jQuery, JavaScript, HTML, MaterializeCSS, a
 
 ## Usage
 
-![Soma Mäkelä's Weather Dashboard](./assets/images/smakela-weather-dashboard.png)
+![Soma Mäkelä's Weather Dashboard](./assets/images/soma-makela-weather-dashboard.png)
 
 Navigate to [Soma Mäkelä's Weather Dashboard](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
 
