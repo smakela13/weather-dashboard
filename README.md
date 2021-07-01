@@ -23,13 +23,13 @@ This weather dashboard is written in jQuery, JavaScript, HTML, MaterializeCSS, a
 
 ## Usage
 
-![Sarah Makela's Weather Dashboard](./assets/images/smakela-weather-dashboard.png)
+![Soma Mäkelä's Weather Dashboard](./assets/images/smakela-weather-dashboard.png)
 
-Navigate to [Sarah Makela's Weather Dashboard](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
+Navigate to [Soma Mäkelä's Weather Dashboard](https://smakela13.github.io/weather-dashboard/index.html) and view the web page.
 
 ## Credits
 
-Created by [Sarah Makela](https://github.com/smakela13).
+Created by [Soma Mäkelä](https://github.com/smakela13).
 
 ## License
 
