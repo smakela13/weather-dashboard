@@ -27,7 +27,6 @@ function getWeatherForecastZipCode(chosenZip = undefined) {
             url: 'https://api.openweathermap.org/data/2.5/forecast/?zip=' + searchZipText + ',us&units=imperial&appid=' + apiKey,
             type: "GET",
             success: function (forecastWeather) {
-                console.log(forecastWeather);
                 var lat = forecastWeather.city.coord.lat;
                 var lon = forecastWeather.city.coord.lon;
 
